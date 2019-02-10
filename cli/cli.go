@@ -16,7 +16,6 @@ import (
 
 	"github.com/blang/semver"
 	"github.com/exercism/cli/debug"
-	update "github.com/inconshreveable/go-update"
 )
 
 var (
@@ -131,7 +130,7 @@ func (c *CLI) Upgrade() error {
 	}
 	defer bin.Close()
 
-	return update.Apply(bin, update.Options{})
+	return fmt.Errorf("Use dnf to update Fedora-packaged exercism")
 }
 
 func (c *CLI) fetchLatestRelease() error {
